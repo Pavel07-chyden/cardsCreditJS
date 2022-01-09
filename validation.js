@@ -35,6 +35,8 @@ function deleteTodo(ind) {
 
 function displayMessage() {
 	let displayMessage = "";
+	let numbersCards = localStorage.getItem("cardNumbers");
+	cardsList = JSON.parse(numbersCards);
 	cardsList.forEach((item, i) => {
 		displayMessage += `
 	<div class="cardInformationWrapper">
@@ -46,7 +48,7 @@ function displayMessage() {
 		cardNumbers.innerHTML = displayMessage;
 	})
 }
-
+displayMessage();
 
 function validateCreditCardNumber(cardNumber) {
 	cardNumber = cardNumber.split(' ').join("");
