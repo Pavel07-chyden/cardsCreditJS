@@ -1,11 +1,16 @@
 let addNumber = document.querySelector('.number')
 addMessage = document.querySelector('.message')
-addButton = document.querySelector('.add')
+addButtonClick = document.querySelector('.add')
 cardNumbers = document.querySelector('.cardNumbers')
 cardMessage = document.querySelector('.cardMessage')
 
+//git push origin main
+// git new
 
-addButton.addEventListener('click', (e) => {
+
+
+
+addButtonClickClick.addEventListener('click', (e) => {
 	e.preventDefault();
 	let cardNumbers = localStorage.getItem("cardNumbers");
 	if (cardNumbers === null) {
@@ -54,11 +59,11 @@ function validateCreditCardNumber(cardNumber) {
 	cardNumber = cardNumber.split(' ').join("");
 	let regExp = /[0-9]/;
 	if (cardNumber.length != 16 || !cardNumber.match(regExp)) {
-		addButton.disabled = true;
+		addButtonClick.disabled = true;
 		return false;
 
 	} else {
-		addButton.disabled = false;
+		addButtonClick.disabled = false;
 		update(cardNumber)
 
 	}
